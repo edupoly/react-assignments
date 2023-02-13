@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <center>
+    <input type="text" id="newc" />
+    <button onclick="addCountry()">Add Country</button>
+    <div id="mydiv" style="border: 2px solid red;padding:10px;margin:10px"></div>
+  </center>
+  <script>
+    var countries = ['india','srilanka','pakistan','nepal','bangladesh']
+    var x = React.createElement('div',{style:{border:'5px solid green',padding:'10px'}},(
+      countries.map((c)=>React.createElement('li',null,(c)))
+    ))
+    function addCountry(){
+      var nc = document.getElementById('newc').value;
+      countries.push(nc);
+      x = React.createElement('div',{style:{border:'5px solid green',padding:'10px'}},(
+        countries.map((c)=>React.createElement('li',null,(c)))
+      ))
+      ReactDOM.render(x,document.getElementById('mydiv'))
+    }
+    ReactDOM.render(x,document.getElementById('mydiv'))
+  </script>
+</body>
+</html>

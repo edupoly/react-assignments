@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <center>
+    <div id="mydiv" style="border: 2px solid red;padding:10px;margin:10px"></div>
+  </center>
+  <script type="text/babel">
+    function Comp1(){
+      return <h1>Welcome to React Components Creation</h1>
+    }
+    
+    ReactDOM.render(<Comp1></Comp1>,document.getElementById('mydiv'))
+  </script>
+</body>
+</html>

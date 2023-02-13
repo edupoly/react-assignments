@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="mydiv" style="border: 2px solid red;padding:10px;margin:10px"></div>
+  <script>
+    var a =100,b=200;
+    var y1 = React.createElement('h1',{style:{color:'blue'}},"Edupoly")  
+    var x = React.createElement('div',{style:{border:'5px solid green'}},y1)
+    ReactDOM.render(x,document.getElementById('mydiv'))
+  </script>
+</body>
+</html>

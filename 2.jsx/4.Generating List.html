@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+  <center>
+    <input type="text" id="newc" />
+    <button onclick="addCountry()">Add Country</button>
+    <div id="mydiv" style="border: 2px solid red;padding:10px;margin:10px"></div>
+  </center>
+  <script type="text/babel">
+
+    var countries = ['india','srilanka','pakistan','nepal','bangladesh'];
+    var x = <ul>{
+      countries.map((c)=>{
+        return <li>{c}</li>
+      })}</ul>
+    function addCountry(){
+      var nc = document.getElementById('newc').value;
+      countries.push(nc);
+      var x = <ul>{
+      countries.map((c)=>{
+        return <li>{c}</li>
+      })}</ul>
+      ReactDOM.render(x,document.getElementById('mydiv'))
+    }
+    ReactDOM.render(x,document.getElementById('mydiv'))
+  </script>
+</body>
+</html>

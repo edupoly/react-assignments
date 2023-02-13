@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <style>
+      #d1 li{
+        list-style: none;
+        margin: 10px;
+        background-color: rgb(72, 96, 88);
+        color:aliceblue;
+        font-size: 40px;
+      }
+    </style>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    
+    <div style="width:100%">
+      <div id="d3" style="text-align:center;width: 400px;margin:20px auto">
+        <input type="text" id="todo">
+        <button onclick="addTodo()">Add Todo</button>
+      </div>
+      
+      <div id="d1" style="list-style:none;text-align:center;width: 400px;margin:20px auto">
+        please enter some todos
+      </div>
+    </div>
+    
+    <script>
+      var todos = []
+      function addTodo(){
+        var newtodo = document.getElementById("todo").value;
+        todos.push(newtodo);
+        var todolist = React.createElement('ul',{},(
+          todos.map((t)=>{
+            return React.createElement('li',{},t)
+          })
+        ))
+        ReactDOM.render(todolist,document.getElementById('d1'))
+      }
+    </script>
+  </body>
+</html>
